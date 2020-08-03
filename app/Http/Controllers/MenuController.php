@@ -14,11 +14,57 @@ class MenuController extends Controller
         $this->middleware('auth');
     }
  
-    public function index()
-    {
+    public function index(Request $request)
+    {   
+        {
         $menus = Menu::orderBy('price')->get();
-        return view('menu.index', ['menus' => $menus]);
- 
+        $selectId = 0;
+        $sort = '';
+        if ($request->menu_id) {
+            if ($request->sort) {
+                if ($request->sort == 'title') {
+                    $menus = Menu::where('menu_id', $request->menu_id)->orderBy('title')->get();
+                    $sort = 'title';
+                } elseif ($request->sort == 'price') {
+                    $menus = Menu::where('menu_id', $request->menu_id)->orderBy('price')->get();
+                    $sort = 'price';
+                } elseif ($request->sort == 'weight') {
+                    $menus = Menu::where('menu_id', $request->menu_id)->orderBy('weight')->get();
+                    $sort = 'weight';
+                } elseif ($request->sort == 'meat') {
+                    $menus = Menu::where('menu_id', $request->menu_id)->orderBy('meat')->get();
+                    $sort = 'meat';
+                } else {
+                    $menus = Menu::all();
+                }
+            } else {
+                $menus = Menu::where('menu_id', $request->menu_id)->get();
+            }
+            $selectId = $request->menu_id;
+        } else {
+            if ($request->sort) {
+                if ($request->sort == 'title') {
+                    $menus = Menu::orderBy('title')->get();
+                    $sort = 'title';
+                } elseif ($request->sort == 'price') {
+                    $menus = Menu::orderBy('price')->get();
+                    $sort = 'price';
+                } elseif ($request->sort == 'weight') {
+                    $menus = Menu::orderBy('weight')->get();
+                    $sort = 'weight';
+                } elseif ($request->sort == 'meat') {
+                    $menus = Menu::orderBy('meat')->get();
+                    $sort = 'meat';
+                } else {
+                    $menus = Menu::all();
+                }
+            } else {
+                $menus = Menu::all();
+            }
+        }
+        // $menus = Menu::orderBy('price')->get();
+        return view('menu.index', compact('menus', 'selectId', 'sort'));
+        }
     }
 
     public function create()

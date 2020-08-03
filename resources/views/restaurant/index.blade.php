@@ -6,7 +6,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><h1>restaurants</h1>
+                <div class="card-header"><h3>Restaurants</h3>
+                <p>Sort by Menu:</p>
                     <a href="{{route('restaurant.index')}}">RESET</a>
                     <form action="{{route('restaurant.index')}}" method="get">
                         <select name="menu_id">

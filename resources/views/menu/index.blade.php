@@ -3,6 +3,37 @@
 @section('content')
 {{-- <img src="pattern.png"> --}}
 <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header"><h3>Menus</h3>
+                
+                    <a href="{{route('menu.index')}}">RESET</a>
+                    <form action="{{route('menu.index')}}" method="get">
+                        {{-- <select name="menu_id">
+                            <option value="0">Show All</option>
+                            @foreach ($menus as $menu)
+                                <option value="{{$menu->id}}" @if($selectId == $menu->id) selected @endif>{{$menu->title}} </option>
+                            @endforeach
+                        </select><br><br>
+                        <select name="menu_id">
+                            @foreach ($menus as $menu)
+                                <option value="{{$menu->id}}">{{$menu->title}} </option>
+                            @endforeach
+                        </select> --}}
+                        Sort By: <br>
+                        Title: <input type="radio" name="sort" value="title" @if('title' == $sort) checked @endif><br>
+                        Price: <input type="radio" name="sort" value="price" @if('price' == $sort) checked @endif><br>
+                        Weight: <input type="radio" name="sort" value="weight" @if('weight' == $sort) checked @endif><br> 
+                        Meat: <input type="radio" name="sort" value="meat" @if('meat' == $sort) checked @endif><br>
+                        <button type="submit">FILTER</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+<div class="container">
    <div class="row justify-content-center">
        <div class="col-md-8">
            <div class="card">
