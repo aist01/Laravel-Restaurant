@@ -4,7 +4,7 @@
 <div class="container">
    <div class="row justify-content-center">
        <div class="col-md-8">
-           <div class="card">
+           <div class="card borders">
                <div class="card-header paint">CREATE MENU</div>
                <div class="card-body">
                  <form id="form" method="POST" action="{{route('menu.store')}}" enctype="multipart/form-data">

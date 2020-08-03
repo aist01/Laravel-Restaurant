@@ -32,8 +32,8 @@
 <body>
     <div id="app">
     {{-- <img src="pattern.png"> --}}
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm paint">
-            <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm color">
+            <div class="container white">
                 <a class="navbar-brand logo" href="{{ url('/') }}">
                     {{ config('app.name', 'Library') }}
                 </a>
@@ -87,7 +87,7 @@
                                     Menus List
                                 </a>
                                 <a class="dropdown-item" href="{{ route('menu.create') }}">
-                                    New menu
+                                    New Menu
                                 </a>   
                             </div>  
                         </li>
@@ -100,7 +100,7 @@
                                     Restaurants List
                                 </a>
                                 <a class="dropdown-item" href="{{ route('restaurant.create') }}">
-                                    New restaurant
+                                    New Restaurant
                                 </a>
                             </div>
                         </li>

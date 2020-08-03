@@ -5,8 +5,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header"><h3>Menus</h3>
+            <div class="card dunno">
+                <div class="card-header"><h4>Menu*******</h4>
                 
                     <a href="{{route('menu.index')}}">RESET</a>
                     <form action="{{route('menu.index')}}" method="get">
@@ -26,7 +26,7 @@
                         Price: <input type="radio" name="sort" value="price" @if('price' == $sort) checked @endif><br>
                         Weight: <input type="radio" name="sort" value="weight" @if('weight' == $sort) checked @endif><br> 
                         Meat: <input type="radio" name="sort" value="meat" @if('meat' == $sort) checked @endif><br>
-                        <button type="submit">FILTER</button>
+                        <button class="yellow" type="submit">FILTER</button>
                     </form>
                 </div>
             </div>
@@ -38,16 +38,18 @@
        <div class="col-md-8">
            <div class="card">
                 <div class="card-header">MENU LIST</div>
-                <div class="card-body">
+                <div class="card-body center">
                     <div class="left">
                         @foreach ($menus as $menu)
                         
                         <a class="black" href="{{route('menu.edit',[$menu])}}">{{$menu->title}}</a> 
                         <img src="{{asset('images/'.$menu->photo)}}" style="width: 250px; height: auto;">
-                        <div>Price: {{$menu->price}}€ <br>Weight: {{$menu->weight}}grams <br>Meat: {{$menu->meat}} grams <br>About: {{$menu->about}}</div>
+                        <div class="menu">
+                        <div >Price: {{$menu->price}}€ <br>Weight: {{$menu->weight}}grams <br>Meat: {{$menu->meat}} grams <br>About: {{$menu->about}}</div>
                         <form method="POST" action="{{route('menu.destroy', [$menu])}}">
                         @csrf
                         <button class="yellow" type="submit">Delete</button>
+                        </div>
                         </form>
                         <br>
                         @endforeach

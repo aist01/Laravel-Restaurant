@@ -4,8 +4,8 @@
 <div class="container">
    <div class="row justify-content-center">
        <div class="col-md-8">
-           <div class="card">
-               <div class="card-header">EDIT MENU</div>
+           <div class="card borders">
+               <div class="card-header painta">EDIT MENU</div>
                <div class="card-body">
                   <form id="form" method="POST" action="{{route('menu.update',[$menu->id])}}" enctype="multipart/form-data">
                   <div class="form-group">

@@ -4,8 +4,8 @@
 <div class="container">
    <div class="row justify-content-center">
        <div class="col-md-8">
-           <div class="card">
-               <div class="card-header">CREATE RESTAURANT</div>
+           <div class="card borders">
+               <div class="card-header paint">CREATE RESTAURANT</div>
                <div class="card-body">
                     <form method="POST" action="{{route('restaurant.store')}}">
                     {{-- Image: <input type="file" name="photo" class="photo"> --}}

@@ -4,8 +4,8 @@
 <div class="container">
    <div class="row justify-content-center">
        <div class="col-md-8">
-           <div class="card">
-               <div class="card-header">EDIT RESTAURANT</div>
+           <div class="card borders">
+               <div class="card-header painta">EDIT RESTAURANT</div>
                <div class="card-body">
                  <form method="POST" action="{{route('restaurant.update',[$restaurant])}}">
                     <div class="form-group">
@@ -27,7 +27,7 @@
                     <select name="menu_id">
                         @foreach ($menus as $menu)
                             <option value="{{$menu->id}}" @if($menu->id == $restaurant->menu_id) selected @endif>
-                                {{$menu->name}} {{$menu->surname}}
+                                {{$menu->title}} 
                             </option>
                         @endforeach
                     </select>

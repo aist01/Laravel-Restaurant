@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card dunno">
                 <div class="card-header"><h3>Restaurants</h3>
                 <p>Sort by Menu:</p>
                     <a href="{{route('restaurant.index')}}">RESET</a>
@@ -26,7 +26,7 @@
                         Customers: <input type="radio" name="sort" value="customers" @if('customers' == $sort) checked @endif><br>
                         Employees: <input type="radio" name="sort" value="employees" @if('employees' == $sort) checked @endif><br> --}}
                         {{-- about: <input type="radio" name="sort" value="about" @if('about' == $sort) checked @endif><br> --}}
-                        <button type="submit">FILTER</button>
+                        <button class="pink" type="submit">FILTER</button>
                     </form>
                 </div>
             </div>
@@ -38,7 +38,7 @@
    <div class="row justify-content-center">
        <div class="col-md-8">
            <div class="card">
-               <div class="card-header">restaurant LIST</div>
+               <div class="card-header">RESTAURANT LIST</div>
                <div class="card-body">
                  @foreach ($restaurants as $restaurant)
                  
