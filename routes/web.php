@@ -15,6 +15,9 @@ Auth::routes(['register' => false]);
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/page', function () {
+    return view('page');
+});
 
 
 Auth::routes();

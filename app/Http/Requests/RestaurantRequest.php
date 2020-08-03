@@ -16,8 +16,8 @@ class RestaurantRequest extends FormRequest
     {
         return [
             'title' => ['required', 'min:4', 'max:64'],
-            'customers' => ['required', 'min:1', 'max:5'],
-            'employees' => ['required', 'min:1', 'max:5'],
+            'customers' => ['required', 'integer','min:1', 'max:5'],
+            'employees' => ['required', 'integer','min:1', 'max:5'],
             // 'about' => ['required', 'min:4', 'max:100']
         ];
     }

@@ -16,9 +16,9 @@ class MenuRequest extends FormRequest
     {
         return [
             'title' => ['required', 'min:2', 'max:64'],
-            'price' => ['required', 'min:1', 'max:4'],
-            'weight' => ['required', 'min:1', 'max:4'],
-            'meat' => ['required', 'min:1', 'max:4'],
+            'price' => ['required', 'between: 0,9999.99'],
+            'weight' => ['required', 'integer', 'min:1', 'max:4'],
+            'meat' => ['required', 'integer', 'min:1', 'max:4', 'lte:weight'],
             'about' => ['required', 'min:3', 'max:100']
         ];
     }

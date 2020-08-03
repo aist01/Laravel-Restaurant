@@ -11,9 +11,14 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <!-- include summernote css/js -->
+    {{-- <!-- include summernote css/js -->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script> --}}
+  <!-- Main Quill library -->
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <!-- Include stylesheet -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
 
     <!-- Fonts -->

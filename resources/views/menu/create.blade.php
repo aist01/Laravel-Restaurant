@@ -7,7 +7,7 @@
            <div class="card">
                <div class="card-header paint">CREATE MENU</div>
                <div class="card-body">
-                 <form method="POST" action="{{route('menu.store')}}" enctype="multipart/form-data">
+                 <form id="form" method="POST" action="{{route('menu.store')}}" enctype="multipart/form-data">
                  Image: <input type="file" name="photo" class="photo">
                     <div class="form-group">
                         <label>Title</label>
@@ -31,7 +31,9 @@
                     </div>
                     <div class="form-group">
                         <label>About</label>
-                        <input type="text" class="form-control" name="about" value="{{old('about')}}">
+                        {{-- <input type="text" class="form-control" name="about" value="{{old('about')}}"> --}}
+                        <input type="hidden" name="about" value="{{old('about')}}">
+                        <div name="about" id="editor"></div>
                         <small class="form-text text-muted">About menu.</small>
                     </div>
 
@@ -43,4 +45,13 @@
        </div>
    </div>
 </div>
+
+<script>
+    var quill = new Quill('#editor', {theme: 'snow'});
+    const input = document.querySelector('input[name=about]');
+    if (input.value !== '') quill.setContents(JSON.parse(input.value), 'api');
+    document.querySelector('#form').onsubmit = () => {
+       input.value = JSON.stringify(quill.getContents());
+    };
+</script>
 @endsection

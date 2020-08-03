@@ -7,30 +7,32 @@
            <div class="card">
                <div class="card-header">EDIT MENU</div>
                <div class="card-body">
-                  <form method="POST" action="{{route('menu.update',[$menu->id])}}" enctype="multipart/form-data">
+                  <form id="form" method="POST" action="{{route('menu.update',[$menu->id])}}" enctype="multipart/form-data">
                   <div class="form-group">
                         <label>Title</label>
-                        <input type="text" class="form-control" name="title" value="{{old('title')}}">
+                        <input type="text" class="form-control" name="title" value="{{old('title', $menu->title)}}">
                         <small class="form-text text-muted">Menu name.</small>
                     </div>
                   <div class="form-group">
                         <label>Price</label>
-                        <input type="text" class="form-control" name="price" value="{{old('price')}}">
+                        <input type="text" class="form-control" name="price" value="{{old('price', $menu->price)}}">
                         <small class="form-text text-muted">Menu price.</small>
                     </div>
                   <div class="form-group">
                         <label>Weight</label>
-                        <input type="text" class="form-control" name="weight" value="{{old('weight')}}">
+                        <input type="text" class="form-control" name="weight" value="{{old('weight', $menu->weight)}}">
                         <small class="form-text text-muted">Menu weight.</small>
                     </div>
                   <div class="form-group">
                         <label>Meat</label>
-                        <input type="text" class="form-control" name="meat" value="{{old('meat')}}">
+                        <input type="text" class="form-control" name="meat" value="{{old('meat', $menu->meat)}}">
                         <small class="form-text text-muted">Menu meat.</small>
                     </div>
                   <div class="form-group">
                         <label>About</label>
-                        <input type="text" class="form-control" name="about" value="{{old('about')}}">
+                        {{-- <input type="text" class="form-control" name="about" value="{{old('about')}}"> --}}
+                        <input type="hidden" name="about" value="{{old('about', $menu->about)}}">
+                        <div name="about" id="editor"></div>
                         <small class="form-text text-muted">Menu about.</small>
                     </div>
                     Image: <input type="file" name="photo" class="photo">
@@ -42,4 +44,13 @@
        </div>
    </div>
 </div>
+
+<script>
+    var quill = new Quill('#editor', {theme: 'snow'});
+    const input = document.querySelector('input[name=about]');
+    if (input.value !== '') quill.setContents(JSON.parse(input.value), 'api');
+    document.querySelector('#form').onsubmit = () => {
+       input.value = JSON.stringify(quill.getContents());
+    };
+</script>
 @endsection
