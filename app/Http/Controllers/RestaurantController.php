@@ -16,7 +16,7 @@ class RestaurantController extends Controller
    
     public function index(Request $request)
     {
-        {   $menus = Menu::all();
+        $menus = Menu::orderBy('title')->get();
             $selectId = 0;
             $sort = '';
             if ($request->menu_id) {
@@ -24,15 +24,15 @@ class RestaurantController extends Controller
                     if ($request->sort == 'title') {
                         $restaurants = Restaurant::where('menu_id', $request->menu_id)->orderBy('title')->get();
                         $sort = 'title';
-                    } elseif ($request->sort == 'isbn') {
-                        $restaurants = Restaurant::where('menu_id', $request->menu_id)->orderBy('isbn')->get();
-                        $sort = 'isbn';
-                    } elseif ($request->sort == 'pages') {
-                        $restaurants = Restaurant::where('menu_id', $request->menu_id)->orderBy('pages')->get();
-                        $sort = 'pages';
-                    } elseif ($request->sort == 'about') {
-                        $restaurants = Restaurant::where('menu_id', $request->menu_id)->orderBy('about')->get();
-                        $sort = 'about';
+                    } elseif ($request->sort == 'price') {
+                        $restaurants = Restaurant::where('menu_id', $request->menu_id)->orderBy('price')->get();
+                        $sort = 'price';
+                    } elseif ($request->sort == 'weight') {
+                        $restaurants = Restaurant::where('menu_id', $request->menu_id)->orderBy('weight')->get();
+                        $sort = 'weight';
+                    } elseif ($request->sort == 'meat') {
+                        $restaurants = Restaurant::where('menu_id', $request->menu_id)->orderBy('meat')->get();
+                        $sort = 'meat';
                     } else {
                         $restaurants = Restaurant::all();
                     }
@@ -45,15 +45,15 @@ class RestaurantController extends Controller
                     if ($request->sort == 'title') {
                         $restaurants = Restaurant::orderBy('title')->get();
                         $sort = 'title';
-                    } elseif ($request->sort == 'isbn') {
-                        $restaurants = Restaurant::orderBy('isbn')->get();
-                        $sort = 'isbn';
-                    } elseif ($request->sort == 'pages') {
-                        $restaurants = Restaurant::orderBy('pages')->get();
-                        $sort = 'pages';
-                    } elseif ($request->sort == 'about') {
-                        $restaurants = Restaurant::orderBy('about')->get();
-                        $sort = 'about';
+                    } elseif ($request->sort == 'price') {
+                        $restaurants = Restaurant::orderBy('price')->get();
+                        $sort = 'price';
+                    } elseif ($request->sort == 'weight') {
+                        $restaurants = Restaurant::orderBy('weight')->get();
+                        $sort = 'weight';
+                    } elseif ($request->sort == 'meat') {
+                        $restaurants = Restaurant::orderBy('meat')->get();
+                        $sort = 'meat';
                     } else {
                         $restaurants = Restaurant::all();
                     }
@@ -64,14 +64,14 @@ class RestaurantController extends Controller
             return view('restaurant.index', compact('restaurants','menus', 'selectId', 'sort'));
             // $restaurants = restaurant::all();
             // return view('restaurant.index', ['restaurants' => $restaurants]);
-        }
+        
     }
 
  
     public function create(Request $request)
     { 
-       
-        $menus = Menu::all();
+        $menus = Menu::orderBy('title')->get();
+        // $menus = Menu::all();
         return view('restaurant.create', ['menus' => $menus]);
     }
 
@@ -81,19 +81,19 @@ class RestaurantController extends Controller
         // $validator = Validator::make($request->all(),
         // [
         //     'title' => ['required', 'min:4', 'max:64'],
-        //     'isbn' => ['required', 'min:3', 'max:64'],
-        //     'pages' => ['required', 'min:1', 'max:64'],
-        //     'about' => ['required', 'min:4', 'max:100']
+        //     'price' => ['required', 'min:3', 'max:64'],
+        //     'weight' => ['required', 'min:1', 'max:64'],
+        //     'meat' => ['required', 'min:4', 'max:100']
         // ],
         // [
         //     'title.min' => 'Please enter at least 2 characters for restaurant title',
         //     'title.max' => 'Please enter no more than 64 characters for restaurant title',
-        //     'isbn.min' => 'Please enter at least 3 characters for restaurant isbn',
-        //     'isbn.max' => 'Please enter no more than 64 characters for restaurant isbn',
-        //     'pages.max' => 'Please enter at least 1 character for restaurant pages',
-        //     'pages.max' => 'Please enter no more than 64 characters for restaurant pages',
-        //     'about.max' => 'Please enter at least 4 characters to describe the item',
-        //     'about.max' => 'Please enter no more than 100 characters to describe the item'
+        //     'price.min' => 'Please enter at least 3 characters for restaurant price',
+        //     'price.max' => 'Please enter no more than 64 characters for restaurant price',
+        //     'weight.max' => 'Please enter at least 1 character for restaurant weight',
+        //     'weight.max' => 'Please enter no more than 64 characters for restaurant weight',
+        //     'meat.max' => 'Please enter at least 4 characters to describe the item',
+        //     'meat.max' => 'Please enter no more than 100 characters to describe the item'
         // ]
         // );
         // if ($validator->fails()) {
@@ -105,9 +105,9 @@ class RestaurantController extends Controller
         
         // $restaurant = new restaurant;
         // $restaurant->title = $request->restaurant_title;
-        // $restaurant->isbn = $request->restaurant_isbn;
-        // $restaurant->pages = $request->restaurant_pages;
-        // $restaurant->about = $request->restaurant_about;
+        // $restaurant->price = $request->restaurant_price;
+        // $restaurant->weight = $request->restaurant_weight;
+        // $restaurant->meat = $request->restaurant_meat;
         // $restaurant->menu_id = $request->menu_id;
         // $restaurant->save();
 
@@ -137,11 +137,11 @@ class RestaurantController extends Controller
 
     public function update(RestaurantRequest $request, Restaurant $restaurant)
     {   
-        $menu->fill($request->all());
+        $restaurant->fill($request->all());
         // $restaurant->title = $request->restaurant_title;
-        // $restaurant->isbn = $request->restaurant_isbn;
-        // $restaurant->pages = $request->restaurant_pages;
-        // $restaurant->about = $request->restaurant_about;
+        // $restaurant->price = $request->restaurant_price;
+        // $restaurant->weight = $request->restaurant_weight;
+        // $restaurant->meat = $request->restaurant_meat;
         // $restaurant->menu_id = $request->menu_id;
         $restaurant->save();
         // return redirect()->route('restaurant.index');

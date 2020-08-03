@@ -16,7 +16,7 @@ class MenuController extends Controller
  
     public function index()
     {
-        $menus = Menu::all();
+        $menus = Menu::orderBy('price')->get();
         return view('menu.index', ['menus' => $menus]);
  
     }
@@ -97,6 +97,13 @@ class MenuController extends Controller
         $menu->fill($request->all());
         // $menu->name = $request->name;
         // $menu->surname = $request->surname;
+        if ($request->hasFile('photo')) {
+            $image = $request->file('photo');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images');
+            $image->move($destinationPath, $name);
+            $menu->photo = $name;
+        }
         $menu->save();
         // return redirect()->route('menu.index');
 

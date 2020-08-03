@@ -10,8 +10,10 @@
                 <div class="card-body">
                     <div class="left">
                         @foreach ($menus as $menu)
+                        
+                        <a class="black" href="{{route('menu.edit',[$menu])}}">{{$menu->title}}</a> 
                         <img src="{{asset('images/'.$menu->photo)}}" style="width: 250px; height: auto;">
-                        <a class="black" href="{{route('menu.edit',[$menu])}}">{{$menu->title}} {{$menu->price}} {{$menu->weight}} {{$menu->meat}} {{$menu->about}}</a>
+                        <div>Price: {{$menu->price}}€ <br>Weight: {{$menu->weight}}grams <br>Meat: {{$menu->meat}} grams <br>About: {{$menu->about}}</div>
                         <form method="POST" action="{{route('menu.destroy', [$menu])}}">
                         @csrf
                         <button class="yellow" type="submit">Delete</button>
