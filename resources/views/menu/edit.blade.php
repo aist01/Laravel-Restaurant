@@ -31,8 +31,8 @@
                   <div class="form-group">
                         <label>About</label>
                         {{-- <input type="text" class="form-control" name="about" value="{{old('about')}}"> --}}
-                        <input type="hidden" name="about" value="{{old('about', $menu->about)}}">
-                        <div name="about" id="editor"></div>
+                        <input type="hidden" name="about" value="{{old('about', $menu->about)}}">{{$menu->about}}
+                        <div id="editor"></div>
                         <small class="form-text text-muted">Menu about.</small>
                     </div>
                     Image: <input type="file" name="photo" class="photo">
@@ -48,9 +48,13 @@
 <script>
     var quill = new Quill('#editor', {theme: 'snow'});
     const input = document.querySelector('input[name=about]');
-    if (input.value !== '') quill.setContents(JSON.parse(input.value), 'api');
-    document.querySelector('#form').onsubmit = () => {
-       input.value = JSON.stringify(quill.getContents());
-    };
+    console.log(input);
+    //console.log(JSON.parse(input.value));
+    console.log(input.value);
+
+    //if (input.value !== '') quill.setContents(JSON.parse(input.value), 'api');
+    //document.querySelector('#form').onsubmit = () => {
+       //input.value = JSON.stringify(quill.getContents());
+    //};
 </script>
 @endsection
