@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
+        {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
         <style>
             html, body {
                 background-color: #fff;
@@ -62,12 +63,41 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .restaurant {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+            
+                /* // margin-top: -760px;
+                // margin-left: -100px;
+                // position: absolute;
+                // top: 50px;
+                // left: 180px; */
+            }
+
+            .links a {
+                font-size: 26px;
+            }
+
+            .register {
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+            }
+
+            .title {
+                color: #fff;
+            }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        {{-- <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="center links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
@@ -79,13 +109,32 @@
                     @endauth
                 </div>
             @endif
+        </div>      --}}
+        
+        <div class="register">
+            <div class="title m-b-md">
+                Restaurants
+            </div>
+            @if (Route::has('login'))
+                <div class="links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
 
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+        </div>     
+            
             <div class="content">
-                <img class="restaurant" src="images/pizzaiolo_6542.png">
+                <img class="restaurant red" src="images/pizzaiolo_6542.png">
                 {{-- <div class="picture" style="background: url('{{asset('images/pizzaiolo_6542.png')}}')">.</div> --}}
-                    <div class="title m-b-md">
-                        Restaurants
-                    </div>
+                {{-- <div class="picture" style="background: url('{{asset('images/pizzaiolo_6542.png')}}'); height: 200px; ">.</div> --}}
+                    
 
                 {{-- <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
@@ -97,6 +146,5 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div> --}}
             </div>
-        </div>
     </body>
 </html>

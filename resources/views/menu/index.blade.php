@@ -45,7 +45,7 @@
                         <a class="black" href="{{route('menu.edit',[$menu])}}">{{$menu->title}}</a> 
                         <img src="{{asset('images/'.$menu->photo)}}" style="width: 250px; height: auto;">
                         <div class="menu">
-                        <div >Price: {{$menu->price}}€ <br>Weight: {{$menu->weight}}grams <br>Meat: {{$menu->meat}} grams <br>About: {!!$menu->about!!}</div>
+                        <div>Price: {{$menu->price}}€ <br>Weight: {{$menu->weight}}grams <br>Meat: {{$menu->meat}} grams <br>About: {!!$menu->about!!}</div>
                         <form method="POST" action="{{route('menu.destroy', [$menu])}}">
                         @csrf
                         <button class="yellow" type="submit">Delete</button>

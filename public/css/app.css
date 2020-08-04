@@ -11066,3 +11066,11 @@ a.text-dark:focus {
   font-weight: 800;
 }
 
+.red {
+  color: red;
+}
+
+.picture {
+  height: 200px;
+}
+
