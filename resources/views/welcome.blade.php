@@ -81,7 +81,8 @@
             @endif
 
             <div class="content">
-                {{-- <img class="restaurant" src="images/pizzaiolo_6542.png"> --}}
+                <img class="restaurant" src="images/pizzaiolo_6542.png">
+                {{-- <div class="picture" style="background: url('{{asset('images/pizzaiolo_6542.png')}}')">.</div> --}}
                     <div class="title m-b-md">
                         Restaurants
                     </div>

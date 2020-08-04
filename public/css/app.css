@@ -11006,7 +11006,7 @@ a.text-dark:focus {
 }
 
 .grey {
-  background-color: rgb(80, 78, 79);
+  background-color: #504e4f;
 }
 
 .blue {
@@ -11030,7 +11030,7 @@ a.text-dark:focus {
 
 .borders {
   border: 6px dashed;
-  border-color: rgb(3, 3, 189);
+  border-color: #0303bd;
 }
 
 .color {
@@ -11064,11 +11064,5 @@ a.text-dark:focus {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 20px;
   font-weight: 800;
-}
-
-.card-body {
-  background-image: url(/images/pizzaiolo_6542.png?b879d66ff312449c04e1c55da2b23b78);
-  width: 400px;
-  height: 500px;
 }
 
