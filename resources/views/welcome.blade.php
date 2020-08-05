@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
-        {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <style>
             html, body {
                 background-color: #fff;
@@ -58,6 +58,7 @@
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+                color: white;
             }
 
             .m-b-md {
@@ -68,12 +69,7 @@
                 display: inline-block;
                 width: 100%;
                 height: 100%;
-            
-                /* // margin-top: -760px;
-                // margin-left: -100px;
-                // position: absolute;
-                // top: 50px;
-                // left: 180px; */
+                object-fit: cover;
             }
 
             .links a {
@@ -92,6 +88,12 @@
             .title {
                 color: #fff;
             }
+
+            .bold {
+                font-weight: bold;
+            }
+
+            
         </style>
     </head>
     <body>
@@ -111,7 +113,7 @@
             @endif
         </div>      --}}
         
-        <div class="register">
+        {{-- <div class="register">
             <div class="title m-b-md">
                 Restaurants
             </div>
@@ -128,9 +130,9 @@
                     @endauth
                 </div>
             @endif
-        </div>     
+        </div>      --}}
             
-            <div class="content">
+            {{-- <div class="content">
                 <img class="restaurant red" src="images/pizzaiolo_6542.png">
                 {{-- <div class="picture" style="background: url('{{asset('images/pizzaiolo_6542.png')}}')">.</div> --}}
                 {{-- <div class="picture" style="background: url('{{asset('images/pizzaiolo_6542.png')}}'); height: 200px; ">.</div> --}}
@@ -145,6 +147,25 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div> --}}
-            </div>
+            {{-- </div>  --}}
+            <div class="jumbotron p-3 p-md-5 text-white rounded restaurant">
+        <div class="col-md-6 px-0 register">
+          <h1 class="display-4 bold">Restaurants</h1>
+          @if (Route::has('login'))
+                <div class="links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+          {{-- <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p> --}}
+        </div>
+      </div>
     </body>
 </html>
