@@ -46,7 +46,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 106px;
                 color: black;
             }
 
@@ -91,6 +91,7 @@
 
             .bold {
                 font-weight: bold;
+                font-size: 106px;
             }
 
             
@@ -169,3 +170,9 @@
       </div>
     </body>
 </html>
+<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4 ">Title of a longer featured blog post</h1>
+         
+        </div>
+      </div>
