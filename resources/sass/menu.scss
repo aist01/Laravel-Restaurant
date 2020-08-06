@@ -77,10 +77,6 @@
     
 }
 
-.grey {
-    background-color: rgb(80, 78, 79);
-}
-
 .blue {
     background-color: lightblue;
     padding: 6px 12px;
@@ -267,9 +263,48 @@ body {
     .card-item {
         width: 50%;
     }
+    
+
 }
 @media (min-width:1200px) {
     .card-item {
         width: 30%;
     }
+}
+
+a.text {
+    font-size: 44px;
+    font-style: bold;
+    color: white;
+}
+
+.leave {
+    display: inline-block;
+    width: 30%;
+}
+
+.push {
+    display: inline-block;
+}
+
+.father {
+    display: inline-block;
+    width: 100%;
+}
+
+// .left {
+//     margin-left: -4px;
+// }
+
+.bottom {
+    margin-top: 200px;
+}
+
+.grey {
+    color: lightblue;
+}
+
+.drink {
+    width: 100%;
+    height: 100vh;
 }
