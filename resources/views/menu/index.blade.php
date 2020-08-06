@@ -35,23 +35,24 @@
 </div>  
 <div class="container">
    <div class="row justify-content-center">
-       <div class="col-md-8">
+       <div class="col-md-10">
            <div class="card">
                 <div class="card-header">MENU LIST</div>
                 <div class="card-body center">
                     <div class="left">
                         @foreach ($menus as $menu)
-                        
-                        <a class="black" href="{{route('menu.edit',[$menu])}}">{{$menu->title}}</a> 
-                        <img src="{{asset('images/'.$menu->photo)}}" style="width: 250px; height: auto;">
-                        <div class="menu">
-                        <div>Price: {{$menu->price}}€ <br>Weight: {{$menu->weight}}grams <br>Meat: {{$menu->meat}} grams <br>About: {!!$menu->about!!}</div>
-                        <form method="POST" action="{{route('menu.destroy', [$menu])}}">
-                        @csrf
-                        <button class="yellow" type="submit">Delete</button>
-                        </div>
-                        </form>
-                        <br>
+                            <div class="card-item">
+                                <a class="black" href="{{route('menu.edit',[$menu])}}">{{$menu->title}}</a> 
+                                <img src="{{asset('images/'.$menu->photo)}}" style="width: 250px; height: auto;">
+                                <div class="menu">
+                                <div>Price: {{$menu->price}}€ <br>Weight: {{$menu->weight}}grams <br>Meat: {{$menu->meat}} grams <br>About: {!!$menu->about!!}</div>
+                                <form method="POST" action="{{route('menu.destroy', [$menu])}}">
+                                @csrf
+                                <button class="yellow" type="submit">Delete</button>
+                                </div>
+                                </form>
+                                <br>
+                            </div>
                         @endforeach
                     </div>
                     <div class="right">

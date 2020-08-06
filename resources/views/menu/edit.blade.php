@@ -31,7 +31,7 @@
                   <div class="form-group">
                         <label>About</label>
                         {{-- <input type="text" class="form-control" name="about" value="{{old('about')}}"> --}}
-                        <input type="hidden" name="about" value="{{old('about', $menu->about)}}">{{$menu->about}}
+                        <input type="hidden" name="about" value="{{old('about', $menu->about)}}">
                         <div id="editor"></div>
                         <small class="form-text text-muted">Menu about.</small>
                     </div>
@@ -48,13 +48,9 @@
 <script>
     var quill = new Quill('#editor', {theme: 'snow'});
     const input = document.querySelector('input[name=about]');
-    console.log(input);
-    //console.log(JSON.parse(input.value));
-    console.log(input.value);
-
-    //if (input.value !== '') quill.setContents(JSON.parse(input.value), 'api');
-    //document.querySelector('#form').onsubmit = () => {
-       //input.value = JSON.stringify(quill.getContents());
-    //};
+    quill.clipboard.dangerouslyPasteHTML(0, input.value);
+    document.querySelector('#form').onsubmit = () => {
+       input.value = quill.root.innerHTML;
+    };
 </script>
 @endsection

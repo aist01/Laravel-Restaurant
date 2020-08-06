@@ -49,9 +49,9 @@
 <script>
     var quill = new Quill('#editor', {theme: 'snow'});
     const input = document.querySelector('input[name=about]');
-    if (input.value !== '') quill.setContents(JSON.parse(input.value), 'api');
+    quill.clipboard.dangerouslyPasteHTML(0, input.value);
     document.querySelector('#form').onsubmit = () => {
-       input.value = JSON.stringify(quill.getContents());
+       input.value = quill.root.innerHTML;
     };
 </script>
 @endsection
