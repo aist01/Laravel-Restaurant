@@ -35,7 +35,7 @@
     </body>
 </html> --}}
 <div class="sidenav">
-         {{-- <div class="login-main-text">
+         <div class="login-main-text">
             <h2><a class="navbar-brand grey" href="{{ url('/') }}">
                     {{ config('app.name', 'Restaurants') }}
                 </a>
@@ -43,8 +43,8 @@
                 </h2>
                 <p>Login or register from here to access.</p>
          </div>
-      </div> --}}
-    <img class="drink" src="images/drinks.jpg">  
+      </div>
+    {{-- <img class="drink" src="images/drinks.jpg">   --}}
         @yield('thing')
     </body>
 </html>
