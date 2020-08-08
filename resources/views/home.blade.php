@@ -122,8 +122,16 @@
                 width: 100%;
                 height: 100%;
                 background-image: url('https://www.booooooom.com/wp-content/uploads/2019/01/mailka-favre-0.jpg');
-                background-position: center;
                 background-size: cover;
+                background-position: center;
+            }
+
+            .logged-in {
+                margin-top: 40px;
+                margin-left: 540px;
+                font-size: 34px;
+                color: white;
+
             }
 
             
@@ -131,12 +139,22 @@
     </head>
     <body>
 
-<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark lady">
-    {{-- <div class="col-md-6 px-0">
-        <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-          <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-          <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
-        </div> --}}
+        <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark lady">
+            <div class="col-md-6 px-0">
+          <h1 class="display-4 font-italic">
+            @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
+                You are logged in!</h1>
+          {{-- <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
+          <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p> --}}
+        </div>
+            {{-- <div class="card-body logged-in col-md-8 container row justify-content-center">
+                
+            </div> --}}
         </div>
    </body>
 </html>
