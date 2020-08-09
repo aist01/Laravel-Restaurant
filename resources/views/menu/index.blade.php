@@ -2,13 +2,23 @@
 
 @section('content')
 {{-- <img src="pattern.png"> --}}
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card dunno">
-                <div class="card-header"><h4>Menu*******</h4>
+                <div class="card-header">
                 
-                    <a href="{{route('menu.index')}}">RESET</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   --}}
+<div class="container">
+   <div class="row justify-content-center">
+       <div class="col-md-14">
+           <div class="card">
+                <div class="card-header">MENU LIST 
                     <form action="{{route('menu.index')}}" method="get">
                         {{-- <select name="menu_id">
                             <option value="0">Show All</option>
@@ -21,23 +31,14 @@
                                 <option value="{{$menu->id}}">{{$menu->title}} </option>
                             @endforeach
                         </select> --}}
-                        Sort By: <br>
-                        Title: <input type="radio" name="sort" value="title" @if('title' == $sort) checked @endif><br>
-                        Price: <input type="radio" name="sort" value="price" @if('price' == $sort) checked @endif><br>
-                        Weight: <input type="radio" name="sort" value="weight" @if('weight' == $sort) checked @endif><br> 
-                        Meat: <input type="radio" name="sort" value="meat" @if('meat' == $sort) checked @endif><br>
-                        <button class="yellow" type="submit">FILTER</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>  
-<div class="container">
-   <div class="row justify-content-center">
-       <div class="col-md-10">
-           <div class="card">
-                <div class="card-header">MENU LIST</div>
+                        <a href="{{route('menu.index')}}">RESET</a>
+                        Sort By: 
+                        Title: <input type="radio" class="sort" name="sort" value="title" @if('title' == $sort) checked @endif>
+                        Price: <input type="radio" class="sort" name="sort" value="price" @if('price' == $sort) checked @endif>
+                        Weight: <input type="radio" class="sort" name="sort" value="weight" @if('weight' == $sort) checked @endif> 
+                        Meat: <input type="radio" class="sort" name="sort" value="meat" @if('meat' == $sort) checked @endif>
+                        <button class="yellow left" type="submit">FILTER</button>
+                    </form></div>
                 <div class="card-body center">
                     <div class="left">
                         @foreach ($menus as $menu)

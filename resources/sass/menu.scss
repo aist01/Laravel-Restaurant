@@ -268,7 +268,7 @@ body {
 }
 @media (min-width:1200px) {
     .card-item {
-        width: 30%;
+        width: 33%;
     }
 }
 
@@ -309,3 +309,21 @@ a.text {
     height: 100vh;
 }
 
+.sort {
+    display: inline-block;
+    // width: 5%;
+}
+
+.form {
+    display: inline-block;
+    width: 30%;
+}
+
+.left {
+    margin-left: 20px;
+}
+
+.card-item {
+    display: inline-block;
+    height: 450px;
+}

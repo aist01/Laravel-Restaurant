@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app') --}}
 
 {{-- @section('content')
 <div class="container pic">
@@ -130,6 +130,7 @@
                 background-image: url('https://www.booooooom.com/wp-content/uploads/2019/01/mailka-favre-0.jpg');
                 background-size: cover;
                 background-position: center;
+                margin-bottom: 0px;
             }
 
             .logged-in {
