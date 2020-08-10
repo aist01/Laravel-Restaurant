@@ -4,11 +4,12 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-14">
+            {{-- <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark oreo"></div> --}}
         {{-- <div class="picture" style="background: url('{{asset('images/iu.png')}}'); height: 200px; ">.</div> --}}
-            <div class="card dunno">
+            <div class="dunno">
                 {{-- <div class="card-header test"><h3>Restaurants</h3> --}}
-                <div class="card-header test" style="background-image: url('{{asset('images/iu.jpg')}}'); background-size: 100% 100%;">
+                <div class=" test jumbotron" style="background-image: url('{{asset('images/oreo.jpg')}}'); background-size: 100% 100%;">
                     <h3>Restaurants</h3>
                     <p>Sort by Menu:</p>
                         <a href="{{route('restaurant.index')}}">RESET</a>
