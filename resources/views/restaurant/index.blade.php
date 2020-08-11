@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+                <div class=" oreo jumbotron p-3 p-md-5 text-white rounded bg-dark"> 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-14">
@@ -9,7 +9,7 @@
         {{-- <div class="picture" style="background: url('{{asset('images/iu.png')}}'); height: 200px; ">.</div> --}}
             <div class="dunno">
                 {{-- <div class="card-header test"><h3>Restaurants</h3> --}}
-                <div class=" test jumbotron" style="background-image: url('{{asset('images/oreo.jpg')}}'); background-size: 100% 100%;">
+                {{-- <div class=" test jumbotron" style="background-image: url('{{asset('images/oreo.jpg')}}'); background-size: 100% 100%;"> --}}
                     <h3>Restaurants</h3>
                     <p>Sort by Menu:</p>
                         <a href="{{route('restaurant.index')}}">RESET</a>
@@ -40,13 +40,13 @@
 
 <div class="container">
    <div class="row justify-content-center">
-       <div class="col-md-8">
-           <div class="card">
+       <div class="col-md-9">
+           <div class="card top">
                <div class="card-header">RESTAURANT LIST</div>
-               <div class="card-body">
+               <div class="card-body center">
                  @foreach ($restaurants as $restaurant)
                  
-                  <a class="black" href="{{route('restaurant.edit',[$restaurant])}}">{{$restaurant->title}} "{{$restaurant->menus->title}}" </a>
+                  <a class="black" href="{{route('restaurant.edit',[$restaurant])}}">{{$restaurant->title}} "{{$restaurant->menus->title}}"</a>
                   <form method="POST" action="{{route('restaurant.destroy', [$restaurant])}}">
                     @csrf
                     <button class="pink" type="submit">Delete</button>

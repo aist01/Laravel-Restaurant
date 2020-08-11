@@ -333,9 +333,17 @@ a.text {
     display: inline-block;
     width: 100%;
     height: 100%;
-    background-image: url('http://images.fineartamerica.com/images/artworkimages/medium/1/cartreuse-oreo-cookie-abstract-food-art-shelly-weingart.jpg');
+    background-image: url('http://weneedfun.com/wp-content/uploads/2015/10/Delicious-Food-Photos-12.jpg');
     background-size: cover;
     background-position: center;
     margin-bottom: 0px;
+    border-top: 4px solid black;
+    border-bottom: 2px solid black;
+
+}
+
+.top {
+
+margin-top: 10px;
 
 }
