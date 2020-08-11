@@ -32,7 +32,7 @@
                             @endforeach
                         </select> --}}
                         <a href="{{route('menu.index')}}">RESET</a>
-                        Sort By: 
+                        <b>Sort By:</b> 
                         Title: <input type="radio" class="sort" name="sort" value="title" @if('title' == $sort) checked @endif>
                         Price: <input type="radio" class="sort" name="sort" value="price" @if('price' == $sort) checked @endif>
                         Weight: <input type="radio" class="sort" name="sort" value="weight" @if('weight' == $sort) checked @endif> 
@@ -44,7 +44,7 @@
                         @foreach ($menus as $menu)
                             <div class="card-item">
                                 <a class="black" href="{{route('menu.edit',[$menu])}}">{{$menu->title}}</a> 
-                                <img src="{{asset('images/'.$menu->photo)}}" style="width: 250px; height: auto;">
+                                <img class="potato" src="{{asset('images/'.$menu->photo)}}" style="width: 250px; height: auto;">
                                 <div class="menu">
                                 <div>Price: {{$menu->price}}€ <br>Weight: {{$menu->weight}}grams <br>Meat: {{$menu->meat}} grams <br>About: {!!$menu->about!!}</div>
                                 <form method="POST" action="{{route('menu.destroy', [$menu])}}">

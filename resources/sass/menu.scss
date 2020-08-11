@@ -77,6 +77,9 @@
     
 }
 
+.dunno h3 {
+    color: black;
+}
 .blue {
     background-color: lightblue;
     padding: 6px 12px;
@@ -278,23 +281,21 @@ a.text {
     color: white;
 }
 
-.leave {
-    display: inline-block;
-    width: 30%;
-}
-
-.push {
-    display: inline-block;
-}
-
-.father {
-    display: inline-block;
-    width: 100%;
-}
-
-// .left {
-//     margin-left: -4px;
+// .leave {
+//     display: inline-block;
+//     width: 30%;
 // }
+
+// .push {
+//     display: inline-block;
+// }
+
+// .father {
+//     display: inline-block;
+//     width: 100%;
+// }
+
+
 
 .bottom {
     margin-top: 200px;
@@ -328,22 +329,23 @@ a.text {
     height: 450px;
 }
 
-.oreo {
+// .oreo {
    
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    background-image: url('http://weneedfun.com/wp-content/uploads/2015/10/Delicious-Food-Photos-12.jpg');
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 0px;
-    border-top: 4px solid black;
-    border-bottom: 2px solid black;
+//     display: inline-block;
+//     width: 100%;
+//     height: 100%;
+//     background-image: url('http://weneedfun.com/wp-content/uploads/2015/10/Delicious-Food-Photos-12.jpg');
+//     background-size: cover;
+//     background-position: center;
+//     margin-bottom: 0px;
+//     border-top: 4px solid black;
+//     border-bottom: 2px solid black;
 
-}
+// }
 
 .top {
 
 margin-top: 10px;
 
 }
+
